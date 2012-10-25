@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>extjs</artifactId>
-    <version>4.1.1a-SNAPSHOT</version>
+    <version>4.1.1a</version>
     <name>Ext JS</name>
     <description>WebJar for Ext JS</description>
     <url>http://webjars.org</url>
@@ -28,7 +28,7 @@
         <url>http://github.com/webjars/extjs</url>
         <connection>scm:git:https://github.com/webjars/extjs.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/extjs.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>extjs-4.1.1a</tag>
     </scm>
 
     <developers>
