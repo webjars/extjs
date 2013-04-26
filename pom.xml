@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>extjs</artifactId>
-    <version>4.2.1-SNAPSHOT</version>
+    <version>4.2.0.663-SNAPSHOT</version>
     <name>Ext JS</name>
     <description>WebJar for Ext JS</description>
     <url>http://webjars.org</url>
@@ -41,7 +41,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>4.2.0</upstream.version>
+        <upstream.version>4.2.0.663</upstream.version>
         <upstream.directory>ext-4.2.0.663</upstream.directory>
         <upstream.file>ext-4.2.0-gpl.zip</upstream.file>
         <upstream.url>http://cdn.sencha.com/ext/gpl</upstream.url>
@@ -77,12 +77,26 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive" />
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
-                                <echo message="moving resources" />
-                                <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/${upstream.directory}" />
-                                </move>
+                                <echo message="unzip archive and file files" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" 
+                                    dest="${destDir}">
+                                    <patternset>
+                                        <exclude name="${upstream.directory}/docs/**"/>
+                                        <exclude name="${upstream.directory}/builds/**"/>
+                                        <exclude name="${upstream.directory}/examples/**"/>
+                                        <exclude name="${upstream.directory}/**/*-classic-sandbox*"/>
+                                        <exclude name="${upstream.directory}/ext*rtl*.js"/>
+                                        <exclude name="${upstream.directory}/ext*debug-w-comments.js"/>
+                                        <exclude name="${upstream.directory}/**/*rtl.css"/>
+                                        <exclude name="${upstream.directory}/**/*rtl-debug.css"/>
+                                    </patternset>
+                                    <mapper>
+                                        <!-- Strip leading directory off each path -->
+                                        <!-- So "xxx/docs/index.html" becomes "docs/index.html" -->
+                                        <cutdirsmapper dirs="1"/>
+                                    </mapper>
+                                </unzip>
+                                <echo message="unzip done" />
                             </target>
                         </configuration>
                     </execution>
