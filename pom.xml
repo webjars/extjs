@@ -95,6 +95,15 @@
                                         <cutdirsmapper dirs="1" />
                                     </mapper>
                                 </unzip>
+                                <!-- Pickup examples/ux also and place in src/ux -->
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${destDir}/src">
+                                    <patternset>
+                                        <include name="${upstream.directory}/examples/ux/**" />
+                                    </patternset>
+                                    <mapper>
+                                        <cutdirsmapper dirs="2" />
+                                    </mapper>
+                                </unzip>
                                 <echo message="unzip done" />
                             </target>
                         </configuration>
