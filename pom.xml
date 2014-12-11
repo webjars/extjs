@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>extjs</artifactId>
-    <version>5.0.2-SNAPSHOT</version>
+    <version>5.1.0-SNAPSHOT</version>
     <name>Ext JS</name>
     <description>WebJar for Ext JS</description>
     <url>http://webjars.org</url>
@@ -41,9 +41,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>5.0.1</upstream.version>
-        <upstream.directory>ext-5.0.1</upstream.directory>
-        <upstream.file>ext-5.0.1-gpl.zip</upstream.file>
+        <upstream.version>5.1.0</upstream.version>
+        <upstream.directory>ext-5.1.0</upstream.directory>
+        <upstream.file>ext-5.1.0-gpl.zip</upstream.file>
         <upstream.url>http://cdn.sencha.com/ext/gpl</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
     </properties>
