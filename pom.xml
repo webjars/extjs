@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>extjs</artifactId>
-    <version>5.1.1-SNAPSHOT</version>
+    <version>5.1.1</version>
     <name>Ext JS</name>
     <description>WebJar for Ext JS</description>
     <url>http://webjars.org</url>
@@ -28,7 +28,7 @@
         <url>http://github.com/webjars/extjs</url>
         <connection>scm:git:https://github.com/webjars/extjs.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/extjs.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>extjs-5.1.1</tag>
     </scm>
 
     <developers>
@@ -77,34 +77,34 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive and file files"/>
+                                <echo message="unzip archive and file files" />
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${destDir}">
                                     <patternset>
-                                        <exclude name="${upstream.directory}/docs/**"/>
-                                        <exclude name="${upstream.directory}/builds/**"/>
-                                        <exclude name="${upstream.directory}/examples/**"/>
-                                        <exclude name="${upstream.directory}/**/*-classic-sandbox*"/>
-                                        <exclude name="${upstream.directory}/ext*rtl*.js"/>
-                                        <exclude name="${upstream.directory}/ext*debug-w-comments.js"/>
-                                        <exclude name="${upstream.directory}/**/*rtl.css"/>
-                                        <exclude name="${upstream.directory}/**/*rtl-debug.css"/>
+                                        <exclude name="${upstream.directory}/docs/**" />
+                                        <exclude name="${upstream.directory}/builds/**" />
+                                        <exclude name="${upstream.directory}/examples/**" />
+                                        <exclude name="${upstream.directory}/**/*-classic-sandbox*" />
+                                        <exclude name="${upstream.directory}/ext*rtl*.js" />
+                                        <exclude name="${upstream.directory}/ext*debug-w-comments.js" />
+                                        <exclude name="${upstream.directory}/**/*rtl.css" />
+                                        <exclude name="${upstream.directory}/**/*rtl-debug.css" />
                                     </patternset>
                                     <mapper>
                                         <!-- Strip leading directory off each path -->
                                         <!-- So "xxx/docs/index.html" becomes "docs/index.html" -->
-                                        <cutdirsmapper dirs="1"/>
+                                        <cutdirsmapper dirs="1" />
                                     </mapper>
                                 </unzip>
                                 <!-- Pickup examples/ux also and place in src/ux -->
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${destDir}/src">
                                     <patternset>
-                                        <include name="${upstream.directory}/examples/ux/**"/>
+                                        <include name="${upstream.directory}/examples/ux/**" />
                                     </patternset>
                                     <mapper>
-                                        <cutdirsmapper dirs="2"/>
+                                        <cutdirsmapper dirs="2" />
                                     </mapper>
                                 </unzip>
-                                <echo message="unzip done"/>
+                                <echo message="unzip done" />
                             </target>
                         </configuration>
                     </execution>
