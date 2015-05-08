@@ -77,34 +77,34 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive and file files" />
+                                <echo message="unzip archive and file files"/>
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${destDir}">
                                     <patternset>
-                                        <exclude name="${upstream.directory}/docs/**" />
-                                        <exclude name="${upstream.directory}/builds/**" />
-                                        <exclude name="${upstream.directory}/examples/**" />
-                                        <exclude name="${upstream.directory}/**/*-classic-sandbox*" />
-                                        <exclude name="${upstream.directory}/ext*rtl*.js" />
-                                        <exclude name="${upstream.directory}/ext*debug-w-comments.js" />
-                                        <exclude name="${upstream.directory}/**/*rtl.css" />
-                                        <exclude name="${upstream.directory}/**/*rtl-debug.css" />
+                                        <exclude name="${upstream.directory}/docs/**"/>
+                                        <exclude name="${upstream.directory}/builds/**"/>
+                                        <exclude name="${upstream.directory}/examples/**"/>
+                                        <exclude name="${upstream.directory}/**/*-classic-sandbox*"/>
+                                        <exclude name="${upstream.directory}/ext*rtl*.js"/>
+                                        <exclude name="${upstream.directory}/ext*debug-w-comments.js"/>
+                                        <exclude name="${upstream.directory}/**/*rtl.css"/>
+                                        <exclude name="${upstream.directory}/**/*rtl-debug.css"/>
                                     </patternset>
                                     <mapper>
                                         <!-- Strip leading directory off each path -->
                                         <!-- So "xxx/docs/index.html" becomes "docs/index.html" -->
-                                        <cutdirsmapper dirs="1" />
+                                        <cutdirsmapper dirs="1"/>
                                     </mapper>
                                 </unzip>
                                 <!-- Pickup examples/ux also and place in src/ux -->
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${destDir}/src">
                                     <patternset>
-                                        <include name="${upstream.directory}/examples/ux/**" />
+                                        <include name="${upstream.directory}/examples/ux/**"/>
                                     </patternset>
                                     <mapper>
-                                        <cutdirsmapper dirs="2" />
+                                        <cutdirsmapper dirs="2"/>
                                     </mapper>
                                 </unzip>
-                                <echo message="unzip done" />
+                                <echo message="unzip done"/>
                             </target>
                         </configuration>
                     </execution>
@@ -113,13 +113,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5</version>
+                <version>2.5.1</version>
             </plugin>
 
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.5.1</version>
+                <version>1.6.5</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>sonatype-nexus-staging</serverId>
