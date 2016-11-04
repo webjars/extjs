@@ -81,7 +81,15 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${destDir}">
                                     <patternset>
                                         <exclude name="${upstream.directory}/docs/**" />
+                                        <exclude name="${upstream.directory}/welcome/**" />
+                                        <exclude name="${upstream.directory}/src/**" />
+                                        <exclude name="${upstream.directory}/packages/**" />
+                                        <exclude name="${upstream.directory}/overrides/**" />
+                                        <exclude name="${upstream.directory}/licenses/**" />
+                                        <exclude name="${upstream.directory}/cmd/**" />
                                         <exclude name="${upstream.directory}/builds/**" />
+                                        <exclude name="${upstream.directory}/build/welcome/**" />
+                                        <exclude name="${upstream.directory}/build/examples/**" />
                                         <exclude name="${upstream.directory}/examples/**" />
                                         <exclude name="${upstream.directory}/**/*-classic-sandbox*" />
                                         <exclude name="${upstream.directory}/ext*rtl*.js" />
